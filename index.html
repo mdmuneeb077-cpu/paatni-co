@@ -3,18 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLOW CART CO. - Beauty Products & Fashion</title>
-    <meta name="description" content="Discover premium beauty products and fashion items at GLOW CART CO. Shop the latest trends and glow your style!">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.imgur.com/2ufCrUp.png">
-    
-    <!-- Google Fonts -->
+    <title>GLOW CART CO. - Beauty & Fashion</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -34,9 +25,10 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
-            top: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
+            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -44,15 +36,14 @@
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
             height: 50px;
-            width: auto;
             transition: transform 0.3s ease;
         }
 
@@ -60,13 +51,13 @@
             transform: scale(1.05);
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-menu a {
+        .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
@@ -74,76 +65,33 @@
             position: relative;
         }
 
-        .nav-menu a:hover {
-            color: #d4af37;
+        .nav-links a:hover {
+            color: #D4AF37;
         }
 
-        .nav-menu a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #d4af37;
+            background: #D4AF37;
             transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
-        }
-
-        .search-bar {
-            position: relative;
-            margin-left: auto;
-        }
-
-        .search-input {
-            padding: 0.5rem 1rem 0.5rem 2.5rem;
-            border: 2px solid #f0f0f0;
-            border-radius: 25px;
-            width: 250px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #999;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             height: 100vh;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -155,31 +103,34 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"><animate attributeName="r" values="100;150;100" dur="8s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23a)"><animate attributeName="r" values="80;120;80" dur="10s" repeatCount="indefinite"/></circle></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.1"/><stop offset="100%" stop-color="%23D4AF37" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="80" fill="url(%23a)"/><circle cx="400" cy="800" r="120" fill="url(%23a)"/></svg>');
             animation: float 20s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
+            color: #1a1a1a;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
         }
 
         .hero-content p {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #666;
             margin-bottom: 2rem;
+            font-weight: 300;
             animation: fadeInUp 1s ease 0.2s both;
         }
 
         .cta-button {
             display: inline-block;
-            background: #d4af37;
+            background: linear-gradient(45deg, #D4AF37, #f1c40f);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -187,13 +138,13 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
             animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.6);
         }
 
         @keyframes fadeInUp {
@@ -207,32 +158,40 @@
             }
         }
 
-        /* Sections */
-        .container {
+        /* Section Styles */
+        section {
+            padding: 100px 0;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 5rem 0;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
+            color: #1a1a1a;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            position: relative;
         }
 
-        /* Product Grid */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #D4AF37, #f1c40f);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Products Section */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -244,219 +203,270 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
             position: relative;
+            transform: translateY(0);
         }
 
         .product-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
         }
 
         .product-image {
             height: 250px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #D4AF37;
             position: relative;
             overflow: hidden;
         }
 
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
+        .product-image i {
+            transition: all 0.3s ease;
         }
 
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
+        .product-card:hover .product-image i {
+            transform: scale(1.2);
         }
 
         .product-info {
             padding: 1.5rem;
+            text-align: center;
         }
 
-        .product-title {
+        .product-name {
             font-size: 1.3rem;
             font-weight: 600;
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
-            color: #333;
         }
 
         .product-desc {
             color: #666;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
-            line-height: 1.5;
         }
 
-        .amazon-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+        }
+
+        .buy-button {
+            background: linear-gradient(45deg, #D4AF37, #f1c40f);
             color: white;
             border: none;
-            padding: 1rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .amazon-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
-        }
-
-        /* Filters */
-        .filters {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.7rem 1.5rem;
-            border: 2px solid #f0f0f0;
-            background: white;
+            padding: 0.8rem 2rem;
             border-radius: 25px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            width: 100%;
+            font-size: 1rem;
+            text-decoration: none;
+            display: block;
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: #d4af37;
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            background: linear-gradient(45deg, #D4AF37, #f1c40f);
             color: white;
-            border-color: #d4af37;
-        }
-
-        /* Pages */
-        .page-content {
-            min-height: 70vh;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            font-size: 1.2rem;
         }
 
-        .about-content,
-        .contact-content {
-            max-width: 800px;
-            background: white;
-            padding: 3rem;
+        .contact-form {
+            background: #f8f9fa;
+            padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #D4AF37, #f1c40f);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
             color: white;
-            text-align: center;
             padding: 3rem 0 1rem;
+            text-align: center;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D4AF37;
         }
 
         .social-links {
-            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
         }
 
         .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
             width: 50px;
             height: 50px;
             background: rgba(255,255,255,0.1);
-            color: white;
             border-radius: 50%;
-            margin: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
-            text-decoration: none;
         }
 
         .social-links a:hover {
-            background: #d4af37;
+            background: #D4AF37;
             transform: translateY(-3px);
         }
 
-        .disclaimer {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            font-size: 0.9rem;
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            color: #999;
         }
 
-        /* Mobile Responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
+            .nav-links {
+                display: none;
             }
 
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .search-bar {
-                margin-left: 0;
-                order: -1;
-            }
-
-            .search-input {
-                width: 200px;
-            }
-
-            nav {
-                padding: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
+            section {
+                padding: 60px 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
             .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 1.5rem;
             }
-
-            .filters {
-                flex-direction: column;
-                align-items: center;
-            }
         }
 
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
         }
 
-        /* Active page highlighting */
-        .nav-menu a.active {
-            color: #d4af37;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -464,290 +474,217 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#home"><img src="https://i.imgur.com/2ufCrUp.png" alt="GLOW CART CO." class="logo"></a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#shop" class="nav-link">Shop</a></li>
-                <li><a href="#categories" class="nav-link">Categories</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <img src="https://i.imgur.com/2ufCrUp.png" alt="GLOW CART CO." class="logo">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="search-bar">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Search products...">
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>GLOW CART CO.</h1>
-            <p>Glow Your Style with Premium Beauty & Fashion</p>
-            <a href="#shop" class="cta-button">Shop Now</a>
+            <h1>WELCOME TO GLOW CART CO.</h1>
+            <p>Your One-Stop Shop for Beauty & Fashion</p>
+            <a href="#products" class="cta-button">Explore Products</a>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section id="featured" class="container">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="products-grid" id="featuredProducts">
-            <!-- Products will be populated by JavaScript -->
-        </div>
-    </section>
-
-    <!-- Shop Section -->
-    <section id="shop" class="container">
-        <h2 class="section-title">Shop All Products</h2>
-        <div class="filters">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="beauty">Beauty</button>
-            <button class="filter-btn" data-category="fashion">Fashion</button>
-        </div>
-        <div class="products-grid" id="shopProducts">
-            <!-- Products will be populated by JavaScript -->
-        </div>
-    </section>
-
-    <!-- About Page -->
-    <section id="about" class="container">
-        <div class="page-content">
-            <div class="about-content">
-                <h2 class="section-title">About GLOW CART CO.</h2>
-                <p>Welcome to GLOW CART CO., your ultimate destination for premium beauty products and fashion essentials. We curate the best from Amazon to help you glow confidently in every moment.</p>
-                <p>Our mission is simple: bring you high-quality, trendsetting products that elevate your style and beauty routine. Shop with confidence knowing you're getting the best recommendations and deals.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Page -->
-    <section id="contact" class="container">
-        <div class="page-content">
-            <div class="contact-content">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Have questions? We'd love to hear from you!</p>
-                <p><strong>Email:</strong> <a href="mailto:mdmuneeb077@gmail.com">mdmuneeb077@gmail.com</a></p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <!-- Products Section -->
+    <section id="products" class="reveal">
+        <div class="section-title">Featured Products</div>
+        <div class="products-grid">
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-magic"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Luxury Face Serum</div>
+                    <div class="product-desc">Premium hydrating serum for radiant skin</div>
+                    <div class="product-price">$25</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
                 </div>
             </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-palette"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Matte Lipstick Set</div>
+                    <div class="product-desc">6 stunning shades for perfect lips</div>
+                    <div class="product-price">$15</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-handbag"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Women's Handbag</div>
+                    <div class="product-desc">Elegant designer handbag for every occasion</div>
+                    <div class="product-price">$45</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-sunglasses"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Stylish Sunglasses</div>
+                    <div class="product-desc">Trendy sunglasses with UV protection</div>
+                    <div class="product-price">$20</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-shoe-prints"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Casual Sneakers</div>
+                    <div class="product-desc">Comfortable sneakers for everyday wear</div>
+                    <div class="product-price">$50</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-gift"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Skincare Kit</div>
+                    <div class="product-desc">Complete 5-piece skincare routine set</div>
+                    <div class="product-price">$30</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-wind"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Hair
+                                            Styling Tool</div>
+                    <div class="product-desc">Professional salon-quality styling tool</div>
+                    <div class="product-price">$35</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-clock"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Designer Watch</div>
+                    <div class="product-desc">Elegant timepiece with premium finish</div>
+                    <div class="product-price">$60</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-spray-can"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Perfume Spray</div>
+                    <div class="product-desc">Luxurious long-lasting fragrance</div>
+                    <div class="product-price">$40</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image"><i class="fas fa-paint-brush"></i></div>
+                <div class="product-info">
+                    <div class="product-name">Makeup Brush Set</div>
+                    <div class="product-desc">10-piece professional brush collection</div>
+                    <div class="product-price">$18</div>
+                    <a href="#" class="buy-button" target="_blank">BUY NOW ON AMAZON</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+        <div class="section-title">About Glow Cart Co.</div>
+        <div class="about-content">
+            Welcome to <strong>Glow Cart Co.</strong>, your premier destination for premium beauty and fashion products. We curate the finest selections from top brands, bringing you luxury skincare, makeup, stylish accessories, and fashion essentials at unbeatable prices. As a trusted affiliate partner, we connect you with the best deals on Amazon while ensuring you get authentic, high-quality products that elevate your beauty and style game. Discover your glow today!
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+        <div class="section-title">Get In Touch</div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:mdmuneeb077@gmail.com">mdmuneeb077@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <h3>GLOW CART CO.</h3>
-            <p>&copy; 2024 GLOW CART CO. All rights reserved.</p>
-            <p><a href="mailto:mdmuneeb077@gmail.com">mdmuneeb077@gmail.com</a></p>
-            <div class="social-links">
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <div class="footer-section">
+                <img src="https://i.imgur.com/2ufCrUp.png" alt="GLOW CART CO." class="footer-logo">
+                <p>Glow Cart Co. - Elevate Your Beauty & Style</p>
             </div>
-            <div class="disclaimer">
-                <strong>Affiliate Disclosure:</strong> We may earn a commission from purchases made through our links. This helps us keep bringing you the best products!
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
+            <div class="footer-section">
+                <h3>Shop by Category</h3>
+                <a href="#">Skincare</a>
+                <a href="#">Makeup</a>
+                <a href="#">Fashion</a>
+                <a href="#">Accessories</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 GLOW CART CO. All rights reserved. | Designed with ❤️ for beauty lovers</p>
         </div>
     </footer>
 
     <script>
-        // Product Data
-        const products = [
-            {
-                id: 1,
-                name: "Luxury Hydrating Serum",
-                desc: "Anti-aging formula with hyaluronic acid and vitamin C for radiant skin",
-                category: "beauty",
-                image: "                
-                  image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example1",
-                price: "$39.99"
-            },
-            {
-                id: 2,
-                name: "Wireless Bluetooth Earbuds",
-                desc: "Premium sound quality with noise cancellation and 24hr battery life",
-                category: "fashion",
-                image: "https://images.unsplash.com/photo-1611593738575-3826a46c99e7?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example2",
-                price: "$79.99"
-            },
-            {
-                id: 3,
-                name: "Silk Satin Pillowcase",
-                desc: "Luxury 22 momme silk for hair & skin protection - 2 pack",
-                category: "beauty",
-                image: "https://images.unsplash.com/photo-1587484007566-f55f7eb38b87?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example3",
-                price: "$29.99"
-            },
-            {
-                id: 4,
-                name: "Designer Crossbody Bag",
-                desc: "Genuine leather with gold hardware - perfect everyday essential",
-                category: "fashion",
-                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example4",
-                price: "$89.99"
-            },
-            {
-                id: 5,
-                name: "LED Face Mask",
-                desc: "7-color therapy device for acne, wrinkles & skin rejuvenation",
-                category: "beauty",
-                image: "https://images.unsplash.com/photo-1625772299842-78617e0c472b?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example5",
-                price: "$129.99"
-            },
-            {
-                id: 6,
-                name: "Gold Layered Necklace Set",
-                desc: "14K gold plated delicate chain necklaces - 3 piece set",
-                category: "fashion",
-                image: "https://images.unsplash.com/photo-1464682942588-2bcfc3a745ea?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example6",
-                price: "$24.99"
-            },
-            {
-                id: 7,
-                name: "Vitamin C Brightening Cream",
-                desc: "Daily moisturizer with SPF 30 for even skin tone & glow",
-                category: "beauty",
-                image: "https://images.unsplash.com/photo-1626785775575-d9e74c7d818b?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example7",
-                price: "$45.99"
-            },
-            {
-                id: 8,
-                name: "Cashmere Blend Scarf",
-                desc: "Ultra-soft oversized scarf in trending pastel colors",
-                category: "fashion",
-                image: "https://images.unsplash.com/photo-1532347165344-6ea1a1a8f8d9?w=400&h=300&fit=crop",
-                affiliateLink: "https://amzn.to/3example8",
-                price: "$59.99"
-            }
-        ];
-
-        // DOM Elements
-        const featuredProductsEl = document.getElementById('featuredProducts');
-        const shopProductsEl = document.getElementById('shopProducts');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        const searchInput = document.querySelector('.search-input');
-
-        // Initialize
-        let filteredProducts = [...products];
-
-        // Render Products
-        function renderProducts(container, productsToRender) {
-            container.innerHTML = productsToRender.map(product => `
-                <div class="product-card" data-category="${product.category}">
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
-                        <p class="product-desc">${product.desc}</p>
-                        <p style="font-weight: 600; color: #d4af37; margin-bottom: 1rem;">${product.price}</p>
-                        <a href="${product.affiliateLink}" class="amazon-btn" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-amazon"></i> BUY NOW ON AMAZON
-                        </a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Featured Products (first 4)
-        function showFeaturedProducts() {
-            const featured = products.slice(0, 4);
-            renderProducts(featuredProductsEl, featured);
-        }
-
-        // Filter Products
-        function filterProducts(category) {
-            if (category === 'all') {
-                filteredProducts = [...products];
-            } else {
-                filteredProducts = products.filter(product => product.category === category);
-            }
-            renderProducts(shopProductsEl, filteredProducts);
-        }
-
-        // Search Functionality
-        function searchProducts(query) {
-            const searchResults = products.filter(product => 
-                product.name.toLowerCase().includes(query.toLowerCase()) ||
-                product.desc.toLowerCase().includes(query.toLowerCase())
-            );
-            renderProducts(shopProductsEl, searchResults);
-        }
-
-        // Navigation
-        function setActiveNav(link) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        }
-
-        // Event Listeners
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const category = btn.dataset.category;
-                filterProducts(category);
-            });
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-                setActiveNav(link);
-
-                // Close mobile menu
-                navMenu.classList.remove('active');
-            });
-        });
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.trim();
-            if (query.length > 0) {
-                searchProducts(query);
-            } else {
-                filterProducts('all');
-            }
-        });
-
-        // Intersection Observer for header scroll effect
-        const header = document.querySelector('header');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    header.style.background = 'rgba(26, 26, 26, 0.95)';
-                    header.style.backdropFilter = 'blur(20px)';
-                } else {
-                    header.style.background = 'rgba(255, 255, 255, 0.95)';
-                }
-            });
-        }, { threshold: 0 });
-
-        observer.observe(document.querySelector('.hero'));
-
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -761,60 +698,62 @@
             });
         });
 
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', () => {
-            showFeaturedProducts();
-            renderProducts(shopProductsEl, products);
-            
-            // Add loading animation
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-
-        // Performance: Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                    imageObserver.observe(img);
-                });
-            });
-        }
-
-        // Add click tracking for affiliate links (optional analytics)
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.amazon-btn')) {
-                // You can add Google Analytics or other tracking here
-                console.log('Amazon affiliate link clicked:', e.target.closest('a').href);
-                // gtag('event', 'amazon_click', { 'product': productName });
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             }
         });
 
-        // SEO: Update page title based on active section
-        const updatePageTitle = () => {
-            const activeLink = document.querySelector('.nav-link.active');
-            if (activeLink) {
-                document.title = `${activeLink.textContent} | GLOW CART CO.`;
-            }
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        // Update title on nav change
-        navLinks.forEach(link => {
-            link.addEventListener('click', updatePageTitle);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
         });
+
+        // Product card stagger animation
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Buy button click effect
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Replace '#' with actual Amazon affiliate links
+                e.preventDefault();
+                window.open('https://www.amazon.com', '_blank');
+            });
+        });
+
+        // Mobile menu toggle (if needed in future)
+        function toggleMobileMenu() {
+            // Implementation for mobile menu
+        }
     </script>
 </body>
 </html>
